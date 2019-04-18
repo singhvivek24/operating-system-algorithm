@@ -192,7 +192,13 @@ while(1)
         }
         
         if(Ready->front!=NULL && do_ct==1)
-	{
+	{         
+		  runtime=1;
+	          pr=deQueue();
+	          pr->state=RUNNING;
+		  pr->more_time_req--;
+		  ongoing++;
+	     if(runtime==pr->exect)
             
              {
                   do_ct=1;
