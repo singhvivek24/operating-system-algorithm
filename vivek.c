@@ -34,8 +34,8 @@ void enqueue_p(struct Process_block *p)
 	
 	if(Ready->front==NULL)
 	{
-		Ready->front=p;
-		Ready->rear=p;
+		front->Ready=p;
+		rear->Ready=p;
 		p->next=NULL;
 	}
         
