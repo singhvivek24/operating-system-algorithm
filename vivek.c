@@ -34,8 +34,8 @@ void enqueue_p(struct Process_block *p)
 	
 	if(Ready->front==NULL)
 	{
-		front->Ready=p;
-		rear->Ready=p;
+		Ready->front=p;
+		Ready->rear=p;
 		p->next=NULL;
 	}
         
@@ -193,12 +193,7 @@ while(1)
         
         if(Ready->front!=NULL && do_ct==1)
 	{
-             runtime=1;
-	     pr=deQueue();
-             pr->state=RUNNING;
-             pr->more_time_req--;
-	     ongoing++;
-             if(runtime==pr->exect)
+            
              {
                   do_ct=1;
                   pr->state=EXIT;
