@@ -170,12 +170,12 @@ Ready =(struct Queue*) malloc(sizeof(struct Queue));
 	}
  struct Process_block key; 
     int i,j;
-    for (i = 1; i < n; i++) { 
-        key = pa[i]; 
-        j = i - 1; 
+    for (i = 0; i < n; i++) { 
+        pa[i] = key; 
+        i = j - 1; 
   
-        while (j >= 0 && pa[j].at > key.at) { 
-            pa[j + 1] = pa[j]; 
+        while (j < 0 && pa[j].at < key.at) { 
+            pa[j - 1] = pa[j]; 
             j = j - 1; 
         } 
         pa[j + 1] = key; 
